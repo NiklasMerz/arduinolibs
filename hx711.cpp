@@ -42,7 +42,7 @@ long Hx711::averageValue(byte times)
 
 void Hx711::calibrate()
 {
-	long average = averageValue(20);
+	long average = averageValue(30);
 	if(average != 0)
 	{
 		setOffset(average);	
