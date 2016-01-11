@@ -3,9 +3,11 @@
  *
  *  Created on: Oct 31, 2012
  *      Author: agu
+ *	modified by Niklas Merz
  */
 
 #include "hx711.h"
+#include <stdlib.h>
 
 Hx711::Hx711(uint8_t pin_dout, uint8_t pin_slk) :
 		_pin_dout(pin_dout), _pin_slk(pin_slk)
@@ -36,6 +38,15 @@ long Hx711::averageValue(byte times)
 	}
 
 	return sum / times;
+}
+
+void Hx711::calibrate()
+{
+	long average = averageValue(20);
+	if(average != 0)
+	{
+		setOffset(average);	
+	}
 }
 
 long Hx711::getValue()

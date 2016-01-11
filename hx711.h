@@ -27,6 +27,7 @@ public:
 	void setOffset(long offset);
 	void setScale(float scale = 742.f);
 	float getGram();
+	void calibrate();
 
 private:
 	const uint8_t _pin_dout;
