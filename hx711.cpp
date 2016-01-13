@@ -45,6 +45,7 @@ void Hx711::calibrate()
 	long average = averageValue(30);
 	if(average != 0)
 	{
+		Serial.println(average);
 		setOffset(average);	
 	}
 }

@@ -16,3 +16,6 @@ setOffset(long offset)
 
 setScale(float scale)
 
+
+Thanks to https://github.com/aguegu
+
